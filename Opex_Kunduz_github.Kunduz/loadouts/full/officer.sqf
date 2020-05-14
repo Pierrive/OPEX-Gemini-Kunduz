@@ -43,7 +43,7 @@
 // ----------------------------------------------------------------------
 
 	// RADIO
-	_unit linkItem (selectRandom OPEX_friendly_radiosShortDistance);
+	if (isClass(configFile >> "cfgPatches" >> "acre_main")) then {_unit addItemToUniform (selectRandom OPEX_friendly_radiosShortDistance)} else {_unit linkItem (selectRandom OPEX_friendly_radiosShortDistance)};
 
 	// MAP
 	_unit linkItem "ItemMap";

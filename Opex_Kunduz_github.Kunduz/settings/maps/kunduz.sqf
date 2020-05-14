@@ -2,11 +2,11 @@
 
 OPEX_mapRadius = worldSize / 2;
 OPEX_mapCenter = [OPEX_mapRadius, OPEX_mapRadius, 0];
-OPEX_mapRegion = "middleEast";
+OPEX_mapRegion = "africa";
 OPEX_mapCountry = "STR_afghanistan";
 OPEX_mapLocality = "STR_kunduz";
 OPEX_mapLocalityInside = "STR_kunduzIn";
-OPEX_mapClimate = "continental";
+OPEX_mapClimate = "arid";
 OPEX_mapEnemy = "TALIB";
 OPEX_mapNationalities = ["STR_afghanistan", "STR_afghanistan", "STR_afghanistan", "STR_afghanistan", "STR_afghanistan", "STR_pakistan", "STR_pakistan", "STR_iran", "STR_iraq", "STR_syria", "STR_saudiArabia"];
 OPEX_mapLanguage = "arabic";

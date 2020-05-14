@@ -61,7 +61,7 @@
 // ADDING NVG / BINOCULAR / RADIO / MAP / COMPASS / GPS / WATCH
 // ----------------------------------------------------------------------
 
-	_unit linkItem (selectRandom OPEX_friendly_radiosShortDistance);
+	if (isClass(configFile >> "cfgPatches" >> "acre_main")) then {_unit addItemToUniform (selectRandom OPEX_friendly_radiosShortDistance)} else {_unit linkItem (selectRandom OPEX_friendly_radiosShortDistance)};
 	_unit addItemToBackpack "NVGoggles";
 	_unit addItemToUniform "ACRE_PRC152";
 	_unit addWeapon "Binocular";

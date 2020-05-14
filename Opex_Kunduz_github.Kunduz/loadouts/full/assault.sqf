@@ -90,7 +90,7 @@
 	if ((random 1 > 0.5) && (OPEX_sunHeight < 0)) then {_unit linkItem (selectRandom OPEX_friendly_NVGs)} else {_unit addItemToVest (selectRandom OPEX_friendly_NVGs)};
 
 	// RADIO
-	_unit linkItem (selectRandom OPEX_friendly_radiosShortDistance);
+	if (isClass(configFile >> "cfgPatches" >> "acre_main")) then {_unit addItemToUniform (selectRandom OPEX_friendly_radiosShortDistance)} else {_unit linkItem (selectRandom OPEX_friendly_radiosShortDistance)};
 
 	// MAP
 	_unit linkItem "ItemMap";

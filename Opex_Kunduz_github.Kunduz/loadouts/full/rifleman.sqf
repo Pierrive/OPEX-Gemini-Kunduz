@@ -22,81 +22,51 @@
 // ADDING CLOTHES
 // ----------------------------------------------------------------------
 
-	// UNIFORM
-	_unit forceAddUniform (selectRandom OPEX_friendly_commonUniforms);
-	[_unit] spawn Gemini_fnc_setUnitInsigna;
-
-	// VEST
-	_unit addVest (selectRandom OPEX_friendly_commonVests);
-
-	// HEADGEAR
-	_unit addHeadgear (selectRandom OPEX_friendly_commonHelmets);
+	_unit forceAddUniform "U_B_CombatUniform_mcam";
+	_unit addVest "V_PlateCarrier_Kerry";
+	_unit addBackpack "B_Kitbag_cbr";
+	_unit addHeadgear "H_HelmetSpecB_paint2";
 
 // ----------------------------------------------------------------------
 // ADDING RIFLE
 // ----------------------------------------------------------------------
 
-	// RIFLE
-	_rifle = selectRandom OPEX_friendly_commonRifles;
-	[_unit, _rifle] call Gemini_fnc_addLoadedWeapon;
-
-	// ADDITIONAL MAGAZINES
-	_rifleMagazine = (getArray (configfile >> "CfgWeapons" >> _rifle >> "magazines")) select 0;
-	for "_i" from 1 to 3 do {_unit addItemToVest _rifleMagazine};
-
-	// FLASHLIGHT
-	_compatibleRifleFlashlights = ([_rifle, 1] call Gemini_fnc_getWeaponAccessories) select {_x in OPEX_friendly_flashlights};
-	if (count _compatibleRifleFlashlights > 0) then {_unit addItemToBackpack (selectRandom _compatibleRifleFlashlights)};
-
-
-	// SILENCER
-	_compatibleRifleSilencers = ([_rifle, 2] call Gemini_fnc_getWeaponAccessories) select {_x in OPEX_friendly_rifleSilencers};
-	if (count _compatibleRifleSilencers > 0) then {_unit addItemToVest (selectRandom _compatibleRifleSilencers)};
+	_unit addWeapon "arifle_MX_F";
+	_unit addPrimaryWeaponItem "muzzle_snds_H";
+	_unit addPrimaryWeaponItem "optic_Hamr";
+	_unit addPrimaryWeaponItem "30Rnd_65x39_caseless_mag";
 
 // ----------------------------------------------------------------------
-// ADDING HANDGUN
+// ADDING ITEMS CLOTHES
 // ----------------------------------------------------------------------
 
-	// HANDGUN
-	_handgun = selectRandom OPEX_friendly_commonHandguns;
-	[_unit, _handgun] call Gemini_fnc_addLoadedWeapon;
+	_unit addItemToUniform "ACE_EarPlugs";
+	for "_i" from 1 to 8 do {_unit addItemToUniform "ACE_elasticBandage";};
+	for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_packingBandage";};
+	for "_i" from 1 to 2 do {_unit addItemToUniform "ACE_splint";};
+	for "_i" from 1 to 3 do {_unit addItemToUniform "ACE_epinephrine";};
+	for "_i" from 1 to 3 do {_unit addItemToUniform "ACE_morphine";};
+	for "_i" from 1 to 2 do {_unit addItemToUniform "ACE_tourniquet";};
+	for "_i" from 1 to 3 do {_unit addItemToUniform "ACE_fieldDressing";};
+	for "_i" from 1 to 3 do {_unit addItemToUniform "ACE_CableTie";};
+	for "_i" from 1 to 5 do {_unit addItemToVest "30Rnd_65x39_caseless_mag";};
+	for "_i" from 1 to 5 do {_unit addItemToVest "30Rnd_65x39_caseless_mag_Tracer";};
+	for "_i" from 1 to 3 do {_unit addItemToVest "SmokeShell";};
+	_unit addItemToVest "SmokeShellGreen";
+	_unit addItemToVest "SmokeShellYellow";
+	for "_i" from 1 to 2 do {_unit addItemToVest "HandGrenade";};
 
-	// ADDITIONAL MAGAZINES
-	_handgunMagazine = (getArray (configfile >> "CfgWeapons" >> _handgun >> "magazines")) select 0;
-	for "_i" from 1 to 1 do {_unit addItemToVest _handgunMagazine};
 
 // ----------------------------------------------------------------------
 // ADDING NVG / BINOCULAR / RADIO / MAP / COMPASS / GPS / WATCH
 // ----------------------------------------------------------------------
 
-	// RADIO
 	_unit linkItem (selectRandom OPEX_friendly_radiosShortDistance);
-
-	// MAP
+	_unit addItemToBackpack "NVGoggles";
+	_unit addItemToUniform "ACRE_PRC152";
+	_unit addWeapon "Binocular";
 	_unit linkItem "ItemMap";
-
-	// COMPASS
 	_unit linkItem "ItemCompass";
-
-	// WATCH
 	_unit linkItem "ItemWatch";
+	_unit linkItem "ItemGPS";
 
-// ----------------------------------------------------------------------
-// ADDING OTHER STUFF
-// ----------------------------------------------------------------------
-
-	// MEDICAL
-	for "_i" from 1 to 1 do {_unit addItemToVest OPEX_medical_firstAidKit};
-
-	// EARPLUGS
-	if (count OPEX_friendly_earplugs > 0) then {_unit addItemToUniform (selectRandom OPEX_friendly_earplugs)};
-
-	// CABLE TIES
-	for "_i" from 1 to 3 do {_unit addItemToUniform (selectRandom OPEX_cableTies)};
-
-	// GRENADES
-	for "_i" from 1 to 1 do {_unit addItemToVest (selectRandom OPEX_friendly_handGrenades)};
-
-// ----------------------------------------------------------------------
-// SETTING SKILLS
-// ----------------------------------------------------------------------

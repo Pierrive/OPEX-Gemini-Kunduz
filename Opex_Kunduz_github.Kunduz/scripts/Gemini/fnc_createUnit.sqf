@@ -48,7 +48,8 @@
 	private _unitSkill = param [4, [0,1], [[0,1]]];
 	private _disableCivilianHostility = param [5, false, [false]];
 	private _lifeTime = param [6, "distance", [""]];
-
+	private _addAAunit = param [7, false, [false]];
+	
 // =========================================================================================================
 // CREATING UNIT
 // =========================================================================================================
@@ -89,7 +90,26 @@
 
 	// RANDOMIZING LOADOUT
 	_unit call Gemini_fnc_randomizeLoadout;
-
+	
+	//ADD AA WEAPON
+	if (_addAAunit) then {
+		removeAllWeapons _unit;
+		_unit addWeapon "arifle_AK12U_arid_F";
+		_unit addPrimaryWeaponItem "optic_Holosight_arid_F";
+		_unit addPrimaryWeaponItem "30rnd_762x39_AK12_Arid_Mag_F";
+		_unit addWeapon "launch_B_Titan_F";
+		_unit addSecondaryWeaponItem "Titan_AA";
+		_unit addBackpack "B_Kitbag_tan";
+		
+		for "_i" from 1 to 5 do {_unit addItemToBackpack "ACE_packingBandage";};
+		for "_i" from 1 to 5 do {_unit addItemToBackpack "ACE_elasticBandage";};
+		for "_i" from 1 to 4 do {_unit addItemToBackpack "ACE_fieldDressing";};
+		_unit addItemToBackpack "Titan_AA";
+		for "_i" from 1 to 8 do {_unit addItemToBackpack "30rnd_762x39_AK12_Arid_Mag_F";};
+		for "_i" from 1 to 4 do {_unit addItemToBackpack "SmokeShell";};
+		for "_i" from 1 to 2 do {_unit addItemToBackpack "HandGrenade";};
+	};
+	
 	// ???
 	_unit spawn
 		{

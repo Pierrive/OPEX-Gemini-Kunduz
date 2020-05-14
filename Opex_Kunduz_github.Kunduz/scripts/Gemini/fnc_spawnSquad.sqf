@@ -130,7 +130,7 @@
 
 	// CREATING SQUAD GROUP
 	private ["_tempGroup"];
-	_tempGroup = createGroup _side;
+	_tempGroup = createGroup [_side, true];
 	_tempGroup setBehaviour "safe";
 
 	// SPAWNING SQUAD
@@ -138,7 +138,7 @@
 
 	// PREVENTING A BEHAVIOUR ISSUE THAT MAY HAPPEN WHEN UNITS FROM A DIFFERENT CONFIG SIDE ARE USED (EXAMPLE: SPAWNING INDEP UNITS ON THE OPFOR SIDE)
 	private ["_squad"];
-	_squad = createGroup _side;
+	_squad = createGroup [_side, true];
 	{(units _tempGroup) joinSilent _squad} forEach units _tempGroup;
 	_squad setBehaviour "safe";
 	deleteGroup _tempGroup;

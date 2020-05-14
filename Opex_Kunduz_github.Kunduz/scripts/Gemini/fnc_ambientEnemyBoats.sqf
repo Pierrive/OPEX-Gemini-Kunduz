@@ -27,7 +27,7 @@ private _mainFunction =
 
 		// SPAWNING BOAT & CREW
 		private _boat = [selectRandom OPEX_enemy_boats, _position] call Gemini_fnc_createVehicle;
-		private _squad = createGroup OPEX_enemy_side1;
+		private _squad = createGroup [OPEX_enemy_side1, true];
 		private _driver = [OPEX_enemy_side1, grpNull, [OPEX_enemy_teamLeader, OPEX_enemy_rifleman, OPEX_enemy_grenadier, OPEX_enemy_MG, OPEX_enemy_marksman], _position, OPEX_enemy_AIskill] call Gemini_fnc_createUnit;
 		_driver moveInDriver _boat;
 		_driver setBehaviour "CARELESS";

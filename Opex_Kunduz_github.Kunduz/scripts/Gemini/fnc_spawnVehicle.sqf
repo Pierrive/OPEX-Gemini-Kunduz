@@ -34,7 +34,7 @@ if (random 100 <= _probability) then
 			{
 				private _squadPos = (position _vehicle) findEmptyPosition [10, 20, "I_soldier_F"];
 				if (count _squadPos == 0) then {_squadPos = ["land", _vehicle, 0, 20, 1] call Gemini_fnc_findPos};
-				private _squad = createGroup _side;
+				private _squad = createGroup [_side, true];
 				for "_i" from 1 to _guardianAmount do
 					{
 						private _unit = [OPEX_enemy_side1, _squad, _guardianTypes, _squadPos getPos [1, random 360], OPEX_enemy_AIskill, false, _lifeTime] call Gemini_fnc_createUnit

@@ -16,7 +16,7 @@ private _canBeCarried = param [5, false, [false]];
 
 // CREATING VEHICLE
 private _tempPosition = [(_position select 0) + random 500 - random 500, (_position select 1) + random 500 - random 500, 500 + (random 500)];
-private _vehicle = createVehicle [_vehicleType, _tempPosition, [], 0, "CAN_COLLIDE"];
+private _vehicle = createVehicle [_vehicleType, _tempPosition, [], 0, "FLY"];
 
 // SETTING VEHICLE NAME (REQUIRED FOR SEVERAL SCRIPTS)
 if ((_vehicle isKindOf "car") || (_vehicle isKindOf "tank") || (_vehicle isKindOf "air") || (_vehicle isKindOf "ship")) then
@@ -38,16 +38,19 @@ _vehicle allowDamage false;
 		sleep 1;
 		_vehicle setPosATL [_position select 0, _position select 1, 0];
 		_vehicle setVectorUp (surfaceNormal (position _vehicle));
-		_vehicle setPosATL [(getPos _vehicle) select 0, (getPos _vehicle) select 1, 0.25];
+		if (_vehicle isKindOf "air") then {_vehicle setPosATL [(getPos _vehicle) select 0, (getPos _vehicle) select 1, 1000]} else {_vehicle setPosATL [(getPos _vehicle) select 0, (getPos _vehicle) select 1, 0.25]};
 		_vehicle setDamage 0;
 		sleep 1;
-		if ((_destroyable) && (getPosATL _vehicle select 2 >= 0.5)) then {_vehicle setPosATL [_position select 0, _position select 1, 0.25]};
-		if ((!_destroyable) && (getPosATL _vehicle select 2 >= 0.5)) then {_vehicle setPosATL [_position select 0, _position select 1, 0.25]};
+		if !(_vehicle isKindOf "air") then {
+			if ((_destroyable) && (getPosATL _vehicle select 2 >= 0.5)) then {_vehicle setPosATL [_position select 0, _position select 1, 0.25]};
+			if ((!_destroyable) && (getPosATL _vehicle select 2 >= 0.5)) then {_vehicle setPosATL [_position select 0, _position select 1, 0.25]};
+		};
+		
 		if (_destroyable) then {_vehicle enableSimulationGlobal true};
 		_vehicle setDamage 0;
 		sleep 1;
 		if (_destroyable) then {_vehicle allowDamage true; _vehicle setDamage 0};
-		if (!(typeOf _vehicle in OPEX_friendly_drones)) then {_vehicle enableDynamicSimulation true};
+		if (!(typeOf _vehicle in OPEX_friendly_drones) && !(_vehicle isKindOf "air")) then {_vehicle enableDynamicSimulation true};
 		_vehicle setDamage 0;
 
 		// SETTING ITEMS ON THE GROUND

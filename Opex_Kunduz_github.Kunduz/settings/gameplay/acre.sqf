@@ -5,5 +5,5 @@ if (!(isClass (configFile >> "CfgPatches" >> "acre_main"))) exitWith {};
 if (!(isClass (configFile >> "CfgPatches" >> "task_force_radio"))) exitWith {};
 
 // RADIOS
-OPEX_friendly_radiosShortDistance = ["ACRE_PRC343"];
-OPEX_friendly_radiosLongDistance = ["ACRE_PRC148"];
+OPEX_friendly_radiosShortDistance = ["ACRE_PRC152"];
+OPEX_friendly_radiosLongDistance = ["ACRE_PRC117F"];

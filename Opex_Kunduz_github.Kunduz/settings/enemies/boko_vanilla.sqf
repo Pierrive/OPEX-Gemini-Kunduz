@@ -105,6 +105,8 @@
 	OPEX_enemy_ships = ["C_Boat_Civil_01_F"];
 	OPEX_enemy_boats = OPEX_enemy_zodiacs + OPEX_enemy_ships; // don't delete this line if you have defined any of these variables
 	OPEX_enemy_armored = ["O_MBT_02_cannon_F"];
+	OPEX_enemy_chopper = ["I_Heli_light_03_dynamicLoadout_F"];
+	OPEX_enemy_plane = ["I_Plane_Fighter_03_dynamicLoadout_F"];
 	OPEX_enemy_MGstatics = ["I_HMG_01_high_F"];
 	OPEX_enemy_GLstatics = ["I_GMG_01_high_F"];
 	OPEX_enemy_ATstatics = ["I_static_AT_F"];

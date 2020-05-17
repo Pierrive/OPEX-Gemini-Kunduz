@@ -14,10 +14,10 @@ private _mainFunction =
 	{
 		// COUNTING CURRENT POPULATION
 		private _allPlayers = allPlayers - entities "HeadlessClient_F"; if (count _allPlayers == 0) exitWith {};
-		private _maxCivilians = 50; // maximum 50 civilians at the same time
-		if (count _allPlayers == 2) then {_maxCivilians = 100};
-		if ((count _allPlayers > 2) && (count _allPlayers <= 5)) then {_maxCivilians = 150};
-		if (count _allPlayers > 5) then {_maxCivilians = 200};
+		private _maxCivilians = 20; // maximum 50 civilians at the same time
+		if (count _allPlayers == 2) then {_maxCivilians = 40};
+		if ((count _allPlayers > 2) && (count _allPlayers <= 5)) then {_maxCivilians = 60};
+		if (count _allPlayers > 5) then {_maxCivilians = 80};
 		private _allCivilians = {(alive _x) && (side _x == civilian) && (!isPlayer _x) && (_x isKindOf "Man") && (!(_x call Gemini_fnc_isInSafeLocation))} count allUnits;
 		private _availableSlots = _maxCivilians - _allCivilians;
 

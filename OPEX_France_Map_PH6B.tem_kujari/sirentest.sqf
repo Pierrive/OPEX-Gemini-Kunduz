@@ -1,0 +1,1 @@
+[alarmFB2,["Sirenair", 1500, 1]] remoteExec ["say3d",0,true]; hint "CONTROLE OPS : AUTORISATION DECOLLAGE OPERATIONNEL";

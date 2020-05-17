@@ -1,0 +1,91 @@
+class CfgSounds
+{
+
+        class alarmfr1
+        {
+                name = "alarmfr1";
+                sound[] = {"sound\alarmfr1up.ogg", 1, 1};
+                titles[] = {};
+        };
+
+        class sirenair
+        {
+                name = "sirenair";
+                sound[] = {"sound\Sirenair.ogg", 1, 1};
+                titles[] = {};
+        };
+
+        class alarmokdep1
+        {
+                name = "alarmokdep1";
+                sound[] = {"sound\alarmokdep1.ogg", 1, 1};
+                titles[] = {};
+        };
+
+        class Assault_repa1
+        {
+                name = "Assault_repa1";
+                sound[] = {"sound\Assault_repa1.ogg", 1, 1};
+                titles[] = {};
+        };
+
+        class Assault_repa2
+        {
+                name = "Assault_repa2";
+                sound[] = {"sound\Assault_repa2.ogg", 1, 1};
+                titles[] = {};
+        };
+
+        class Assault_trp1
+        {
+                name = "Assault_trp1";
+                sound[] = {"sound\Assault_trp1.ogg", 1, 1};
+                titles[] = {};
+        };
+
+        class alertmax1
+        {
+                name = "alertmax1";
+                sound[] = {"sound\alertmax1.ogg", 1, 1};
+                titles[] = {};
+        };
+
+        class alertmax2
+        {
+                name = "alertmax2";
+                sound[] = {"sound\alertmax2.ogg", 1, 1};
+                titles[] = {};
+        };
+
+        class messal2
+        {
+                name = "messal2";
+                sound[] = {"sound\messal2.ogg", 1, 1};
+                titles[] = {};
+        };
+
+        class messal1
+        {
+                name = "messal1";
+                sound[] = {"sound\messal1.ogg", 1, 1};
+                titles[] = {};
+        };
+
+        class alertdam1
+        {
+                name = "alertdam1";
+                sound[] = {"sound\alarmaerodam.ogg", 1, 1};
+                titles[] = {};
+        };
+	class repair
+	{
+		name = "repair";
+		sound[] = {"sound\repair.ogg", 2, 1};
+		titles[] = {1, ""};
+	};
+
+};
+
+
+
+

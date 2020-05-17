@@ -1,0 +1,1 @@
+hint "D'apres les documents, les russes souhaiteraient établir une base d'hélicoptère dans les alentours, nous n'avons pas de coordonnées mais il faut s'attendre à subir des assauts aériens, il faut avertir nos unités aériennes";
